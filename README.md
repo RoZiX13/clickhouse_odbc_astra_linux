@@ -5,12 +5,13 @@
 Необходимо самостоятельно сбилдить драйвер на сервере для этого нужно:
 1. Используя команду скопировать репозиторий разработчиков со всеми сабмодулями:  
 ```
+sudo apt install git
 git clone --recursive git@github.com:ClickHouse/clickhouse-odbc.git
 ```
 2. Далее в корневой папке ./clickhouse-odbc в файле "CMakeLists.txt" заменить "set (CMAKE_CXX_STANDARD 23)" на "set (CMAKE_CXX_STANDARD 20)"
 3. Установить компилятор "clang-19" (можно и более новую версию) для этого нужно выполнить команду:
 ```
-sudo apt install build-essential git cmake libpoco-dev libssl-dev libicu-dev unixodbc-dev
+sudo apt install build-essential libpoco-dev libssl-dev libicu-dev unixodbc-dev
 sudo apt-get install clang-19 clang++-19
 ```
 4. Далее нужно использовать cmake, но если установить его через "apt-get", то установиться старая версия, которая не сможет сбилдить драйвер, поэтому нужно установить с официального сайта: "https://cmake.org/download/" актуальную версию cmake через распаковку пакета и использовать службу в папке bin, например, "~/cmake-X.X.X-linux-x86_64/bin/cmake", где
