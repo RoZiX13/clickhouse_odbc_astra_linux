@@ -11,7 +11,7 @@ git clone --recursive git@github.com:ClickHouse/clickhouse-odbc.git
 ```
 2. Установить компилятор "clang-19" (можно и более новую версию) и библиотеки для компиляции для этого нужно выполнить команду:
 ```
-sudo apt install build-essential libpoco-dev libssl-dev libicu-dev unixodbc-dev
+sudo apt install build-essential libpoco-dev libssl-dev libicu-dev unixodbc-dev libpthread-stubs0-dev
 sudo apt-get install clang-19 clang++-19
 ```
 3. Далее нужно использовать cmake, но если установить его через "apt-get", то установиться старая версия, которая не сможет сбилдить драйвер, поэтому нужно установить с официального сайта: "https://cmake.org/download/" актуальную версию cmake через распаковку пакета и использовать службу в папке bin, например, "~/cmake-X.X.X-linux-x86_64/bin/cmake", где
